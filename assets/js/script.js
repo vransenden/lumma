@@ -489,7 +489,7 @@ function initLiveClock() {
     const now = new Date();
     // Format to Eastern Time (New York timezone)
     const options = {
-      timeZone: 'America/New York',
+      timeZone: 'America/New_York',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
