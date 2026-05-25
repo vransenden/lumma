@@ -104,6 +104,14 @@ function initMobileMenu() {
       toggle.classList.remove('active');
     });
   });
+
+  // Close nav when clicking outside on body backdrop
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggle.contains(e.target)) {
+      navLinks.classList.remove('active');
+      toggle.classList.remove('active');
+    }
+  });
 }
 
 /* --- INTERSECTION OBSERVER FOR SCROLL REVEALS --- */
