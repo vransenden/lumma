@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initLineMaskReveal();
   initHorizontalScroll();
   initInteractiveCanvas();
+  initPricingEstimator();
+  initLiveClock();
+  initMagneticTarget();
+  initBentoTilt();
   initTestimonialsSlider();
   initProjectModal();
 });
@@ -388,6 +392,169 @@ function initInteractiveCanvas() {
       e.stopPropagation(); // prevent triggering coordinate update jumps
       toolBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+    });
+  });
+}
+
+/* --- DYNAMIC PRICING ESTIMATOR --- */
+function initPricingEstimator() {
+  const scopeBtns = document.querySelectorAll('.scope-btn');
+  const pagesRange = document.getElementById('pages-range');
+  const pagesValue = document.getElementById('pages-value');
+  const addonChips = document.querySelectorAll('.addon-chip');
+  const priceCounter = document.getElementById('price-counter');
+
+  if (!priceCounter) return;
+
+  let basePrice = 1500;
+  let pageCount = 3;
+  let addonsTotal = 0;
+  let currentEstimatedPrice = 2250;
+
+  function updateEstimate() {
+    const costPerPage = 250;
+    const targetPrice = basePrice + (pageCount * costPerPage) + addonsTotal;
+    
+    // Smooth price animation counter effect
+    animatePriceCounter(currentEstimatedPrice, targetPrice, 400);
+    currentEstimatedPrice = targetPrice;
+  }
+
+  function animatePriceCounter(start, end, duration) {
+    const startTime = performance.now();
+    
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing curve (easeOutCubic)
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(start + (end - start) * ease);
+      
+      priceCounter.textContent = `$${current.toLocaleString()}`;
+      
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        priceCounter.textContent = `$${end.toLocaleString()}`;
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Scope selectors click
+  scopeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      scopeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      basePrice = parseInt(btn.getAttribute('data-base'), 10);
+      updateEstimate();
+    });
+  });
+
+  // Pages slider input
+  if (pagesRange && pagesValue) {
+    pagesRange.addEventListener('input', (e) => {
+      pageCount = parseInt(e.target.value, 10);
+      pagesValue.textContent = `${pageCount} ${pageCount === 1 ? 'Page' : 'Pages'}`;
+      updateEstimate();
+    });
+  }
+
+  // Addon chips toggle
+  addonChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+      const premiumValue = parseInt(chip.getAttribute('data-premium'), 10);
+      
+      if (chip.classList.contains('active')) {
+        addonsTotal += premiumValue;
+      } else {
+        addonsTotal -= premiumValue;
+      }
+      updateEstimate();
+    });
+  });
+
+  // Run initial estimate calculation
+  updateEstimate();
+}
+
+/* --- LIVE WORLD CLOCK (EST/NEW YORK) --- */
+function initLiveClock() {
+  const clockDisplay = document.getElementById('live-clock');
+  if (!clockDisplay) return;
+
+  function updateClock() {
+    const now = new Date();
+    // Format to Eastern Time (New York timezone)
+    const options = {
+      timeZone: 'America/New York',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+    const formatter = new Intl.DateTimeFormat('en-US', options);
+    clockDisplay.textContent = formatter.format(now);
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock(); // first run immediately
+}
+
+/* --- MAGNETIC TARGET HOVER ENGINE --- */
+function initMagneticTarget() {
+  const container = document.querySelector('.magnetic-track-box');
+  const target = document.getElementById('magnetic-target');
+  if (!container || !target) return;
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    // Pull toward cursor by 35% of the offset distance
+    target.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px)`;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    // Return target cleanly back to center
+    target.style.transform = 'translate(0px, 0px)';
+  });
+}
+
+/* --- 3D BENTO TILT ROTATE --- */
+function initBentoTilt() {
+  const bentoCards = document.querySelectorAll('.bento-card');
+  
+  // Disable 3D tilt on smaller/mobile widths to prevent visual glitching
+  if (window.innerWidth <= 1100) return;
+
+  bentoCards.forEach(card => {
+    // Avoid tilting the horizontal ribbon or modal containers to prevent breaking horizontal scroll pins
+    if (card.closest('.horizontal-scroll-sticky') || card.classList.contains('project-modal-content')) return;
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Translate coordinates to percentage offset (-0.5 to 0.5)
+      const px = (x / rect.width) - 0.5;
+      const py = (y / rect.height) - 0.5;
+
+      // Define maximum rotation angles in degrees (e.g. max 8 degrees)
+      const rotateX = (-py * 8).toFixed(2);
+      const rotateY = (px * 8).toFixed(2);
+
+      // Rotate layout in 3D perspective space
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Restore bento card back to original default flat layout
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
     });
   });
 }
