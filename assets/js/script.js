@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initInteractiveCanvas();
   initPricingEstimator();
   initLiveClock();
-  initMagneticTarget();
-  initBentoTilt();
   initTestimonialsSlider();
   initProjectModal();
 });
@@ -110,7 +108,7 @@ function initMobileMenu() {
 
 /* --- INTERSECTION OBSERVER FOR SCROLL REVEALS --- */
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-down');
   if (reveals.length === 0) return;
 
   const observerOptions = {
@@ -501,60 +499,4 @@ function initLiveClock() {
 
   setInterval(updateClock, 1000);
   updateClock(); // first run immediately
-}
-
-/* --- MAGNETIC TARGET HOVER ENGINE --- */
-function initMagneticTarget() {
-  const container = document.querySelector('.magnetic-track-box');
-  const target = document.getElementById('magnetic-target');
-  if (!container || !target) return;
-
-  container.addEventListener('mousemove', (e) => {
-    const rect = container.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    // Pull toward cursor by 35% of the offset distance
-    target.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px)`;
-  });
-
-  container.addEventListener('mouseleave', () => {
-    // Return target cleanly back to center
-    target.style.transform = 'translate(0px, 0px)';
-  });
-}
-
-/* --- 3D BENTO TILT ROTATE --- */
-function initBentoTilt() {
-  const bentoCards = document.querySelectorAll('.bento-card');
-  
-  // Disable 3D tilt on smaller/mobile widths to prevent visual glitching
-  if (window.innerWidth <= 1100) return;
-
-  bentoCards.forEach(card => {
-    // Avoid tilting the horizontal ribbon or modal containers to prevent breaking horizontal scroll pins
-    if (card.closest('.horizontal-scroll-sticky') || card.classList.contains('project-modal-content')) return;
-
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      // Translate coordinates to percentage offset (-0.5 to 0.5)
-      const px = (x / rect.width) - 0.5;
-      const py = (y / rect.height) - 0.5;
-
-      // Define maximum rotation angles in degrees (e.g. max 8 degrees)
-      const rotateX = (-py * 8).toFixed(2);
-      const rotateY = (px * 8).toFixed(2);
-
-      // Rotate layout in 3D perspective space
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      // Restore bento card back to original default flat layout
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-    });
-  });
 }
