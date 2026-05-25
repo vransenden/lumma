@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollHeader();
   initMobileMenu();
   initScrollReveal();
-  initPortfolioFilter();
+  initLineMaskReveal();
+  initHorizontalScroll();
   initTestimonialsSlider();
   initProjectModal();
 });
@@ -123,6 +124,67 @@ function initScrollReveal() {
   }, observerOptions);
 
   reveals.forEach(el => observer.observe(el));
+}
+
+/* --- LINE MASK REVEAL ANIMATIONS --- */
+function initLineMaskReveal() {
+  const masks = document.querySelectorAll('.line-mask');
+  if (masks.length === 0) return;
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.05
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  masks.forEach(m => observer.observe(m));
+}
+
+/* --- PREMIUM STICKY HORIZONTAL SCROLL ENGINE --- */
+function initHorizontalScroll() {
+  const container = document.getElementById('work-horizontal-container');
+  const track = document.getElementById('horizontal-track');
+  if (!container || !track) return;
+
+  function handleScroll() {
+    // Disable horizontal scrolling on mobile/tablet widths
+    if (window.innerWidth <= 1100) {
+      track.style.transform = 'none';
+      return;
+    }
+
+    const containerRect = container.getBoundingClientRect();
+    const containerTop = containerRect.top;
+    const containerHeight = containerRect.height;
+    const windowHeight = window.innerHeight;
+
+    // Calculate scroll progress within the horizontal container range
+    const scrollRange = containerHeight - windowHeight;
+    if (scrollRange <= 0) return;
+
+    // Clamp progress between 0 and 1
+    let progress = -containerTop / scrollRange;
+    progress = Math.max(0, Math.min(1, progress));
+
+    // Calculate total track width and horizontal translation offset
+    const trackWidth = track.scrollWidth;
+    const maxTranslation = trackWidth - window.innerWidth + (window.innerWidth * 0.2); // includes track margins
+
+    const translation = progress * maxTranslation;
+    track.style.transform = `translateX(-${translation}px)`;
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleScroll);
+  handleScroll(); // Trigger initial position check
 }
 
 /* --- DYNAMIC PORTFOLIO INTERACTIVE FILTER --- */
