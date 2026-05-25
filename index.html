@@ -44,7 +44,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#work-horizontal-container" class="nav-link">Work</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       
@@ -61,18 +61,24 @@
   </header>
 
   <!-- Bento Grid Showcase Section -->
-  <main class="section container" id="home" style="padding-top: 140px;">
+  <main class="section container" id="home" style="padding-top: 160px;">
     <div class="bento-grid">
       
       <!-- Cell 1: Giant Typography Hero Cell (Span 8) -->
-      <div class="bento-card span-8 bento-hero-intro reveal">
+      <div class="bento-card span-8 bento-hero-intro reveal" id="hero-bento-card">
         <span class="badge" style="align-self: flex-start;">John Doe &mdash; Creative Dev</span>
-        <h1 class="display-1 text-gradient bento-hero-title">crafting digital masterpieces.</h1>
+        
+        <h1 class="display-1 text-gradient bento-hero-title">
+          <span class="line-mask"><span>crafting</span></span>
+          <span class="line-mask"><span>digital</span></span>
+          <span class="line-mask"><span>masterpieces.</span></span>
+        </h1>
+        
         <p class="bento-hero-desc">
           I build high-end, award-winning interactive websites that combine sleek, pure black aesthetics with clean, premium code structures.
         </p>
         <div class="bento-hero-cta">
-          <a href="#work" class="btn btn-primary">Explore Works</a>
+          <a href="#work-horizontal-container" class="btn btn-primary">Explore Works</a>
           <a href="#contact" class="btn btn-secondary">Let's Connect</a>
         </div>
       </div>
@@ -87,7 +93,10 @@
       <div class="bento-card span-8 reveal" id="about">
         <div>
           <span class="badge">About Me</span>
-          <h2 class="display-2" style="margin-bottom: 20px;">innovating design & robust code.</h2>
+          <h2 class="display-2" style="margin-bottom: 20px;">
+            <span class="line-mask"><span>innovating design</span></span>
+            <span class="line-mask"><span>& robust code.</span></span>
+          </h2>
           <p class="bento-about-text">
             I specialize in translating ambitious, complex designs into highly-responsive, lightning-fast static templates. By blending interactive layout mechanics with clean components, I create products that look visually stunning while meeting the strict demands of elite ThemeForest authors.
           </p>
@@ -130,7 +139,10 @@
       <div class="bento-card span-12 reveal">
         <div style="margin-bottom: 30px;">
           <span class="badge">Expertise</span>
-          <h2 class="display-2">premium web services.</h2>
+          <h2 class="display-2">
+            <span class="line-mask"><span>premium web</span></span>
+            <span class="line-mask"><span>services.</span></span>
+          </h2>
         </div>
         <div class="services-container">
           <!-- Service item 1 -->
@@ -163,118 +175,106 @@
     </div>
   </main>
 
-  <!-- Portfolio / Work Section -->
-  <section class="section container" id="work">
-    <div class="portfolio-header-box reveal">
-      <div>
-        <span class="badge">Portfolio</span>
-        <h2 class="display-2">featured works.</h2>
-      </div>
-      <!-- Filters -->
-      <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="design">Design</button>
-        <button class="filter-btn" data-filter="development">Development</button>
-        <button class="filter-btn" data-filter="branding">Branding</button>
-      </div>
-    </div>
-    
-    <!-- Bento Portfolio Grid -->
-    <div class="portfolio-bento-grid">
-      <!-- Item 1 -->
-      <div class="portfolio-bento-card reveal" data-category="design">
-        <div class="portfolio-bento-img-box">
-          <img src="assets/img/project_doodle.png" alt="Lumina Analytics" class="portfolio-bento-img">
-          <div class="portfolio-bento-overlay">
-            <span class="portfolio-bento-category">UI/UX Design</span>
-            <h3 class="portfolio-bento-title">Lumina Analytics Dashboard</h3>
-            <p class="portfolio-bento-desc">A premium cloud telemetry metrics dashboard engineered for high readability and subtle glow highlights.</p>
-            <a href="#" class="portfolio-bento-link" data-project-id="lumina">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+  <!-- BADASS STICKY HORIZONTAL SCROLL PORTFOLIO SECTION -->
+  <section class="horizontal-scroll-container" id="work-horizontal-container">
+    <div class="horizontal-scroll-sticky" id="scroll-sticky-element">
+      
+      <!-- Top Title Wrapper -->
+      <div class="container" style="position: absolute; top: 10vh; left: 0; right: 0; z-index: 10;">
+        <div class="horizontal-scroll-header">
+          <div>
+            <span class="badge">Portfolio</span>
+            <h2 class="display-2" style="color: var(--text-primary);">selected works.</h2>
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 1px; padding-bottom: 10px;">
+            [ Scroll Down to Slide &rarr; ]
           </div>
         </div>
       </div>
+      
+      <!-- Horizontal Ribbon Track -->
+      <div class="horizontal-scroll-track" id="horizontal-track">
+        
+        <!-- Project Card 1 -->
+        <div class="portfolio-horizontal-card" data-category="design">
+          <div class="portfolio-bento-img-box">
+            <img src="assets/img/project_doodle.png" alt="Lumina Analytics" class="portfolio-bento-img">
+            <div class="portfolio-bento-overlay">
+              <span class="portfolio-bento-category">UI/UX Design</span>
+              <h3 class="portfolio-bento-title">Lumina Analytics Dashboard</h3>
+              <p class="portfolio-bento-desc">A premium cloud telemetry metrics dashboard engineered for high readability and subtle glow highlights.</p>
+              <a href="#" class="portfolio-bento-link" data-project-id="lumina">
+                View Case Study
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
 
-      <!-- Item 2 -->
-      <div class="portfolio-bento-card reveal" data-category="development">
-        <div class="portfolio-bento-img-box">
-          <img src="assets/img/project_doodle.png" alt="Aether AI" class="portfolio-bento-img">
-          <div class="portfolio-bento-overlay">
-            <span class="portfolio-bento-category">Development</span>
-            <h3 class="portfolio-bento-title">Aether Intelligent AI Portal</h3>
-            <p class="portfolio-bento-desc">An interactive website featuring neural net mockups and lightweight browser transitions.</p>
-            <a href="#" class="portfolio-bento-link" data-project-id="aether">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+        <!-- Project Card 2 -->
+        <div class="portfolio-horizontal-card" data-category="development">
+          <div class="portfolio-bento-img-box">
+            <img src="assets/img/project_doodle.png" alt="Aether AI" class="portfolio-bento-img">
+            <div class="portfolio-bento-overlay">
+              <span class="portfolio-bento-category">Development</span>
+              <h3 class="portfolio-bento-title">Aether Intelligent AI Portal</h3>
+              <p class="portfolio-bento-desc">An interactive website featuring neural net mockups and lightweight browser transitions.</p>
+              <a href="#" class="portfolio-bento-link" data-project-id="aether">
+                View Case Study
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Item 3 -->
-      <div class="portfolio-bento-card reveal" data-category="branding">
-        <div class="portfolio-bento-img-box">
-          <img src="assets/img/project_doodle.png" alt="Vesper Web3" class="portfolio-bento-img">
-          <div class="portfolio-bento-overlay">
-            <span class="portfolio-bento-category">Branding</span>
-            <h3 class="portfolio-bento-title">Vesper Web3 Protocol Identity</h3>
-            <p class="portfolio-bento-desc">Futuristic typography scale, custom geometry, and marketing asset brand board guidelines.</p>
-            <a href="#" class="portfolio-bento-link" data-project-id="vesper">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+        <!-- Project Card 3 -->
+        <div class="portfolio-horizontal-card" data-category="branding">
+          <div class="portfolio-bento-img-box">
+            <img src="assets/img/project_doodle.png" alt="Vesper Web3" class="portfolio-bento-img">
+            <div class="portfolio-bento-overlay">
+              <span class="portfolio-bento-category">Branding</span>
+              <h3 class="portfolio-bento-title">Vesper Web3 Protocol Identity</h3>
+              <p class="portfolio-bento-desc">Futuristic typography scale, custom geometry, and marketing asset brand board guidelines.</p>
+              <a href="#" class="portfolio-bento-link" data-project-id="vesper">
+                View Case Study
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Item 4 -->
-      <div class="portfolio-bento-card reveal" data-category="design">
-        <div class="portfolio-bento-img-box">
-          <img src="assets/img/project_doodle.png" alt="Solas Creative" class="portfolio-bento-img">
-          <div class="portfolio-bento-overlay">
-            <span class="portfolio-bento-category">UI/UX Design</span>
-            <h3 class="portfolio-bento-title">Solas Premium Agency Site</h3>
-            <p class="portfolio-bento-desc">Bespoke portfolio concept showing high-fidelity graphics, customized curves, and glass cells.</p>
-            <a href="#" class="portfolio-bento-link" data-project-id="solas">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+        <!-- Project Card 4 -->
+        <div class="portfolio-horizontal-card" data-category="design">
+          <div class="portfolio-bento-img-box">
+            <img src="assets/img/project_doodle.png" alt="Solas Creative" class="portfolio-bento-img">
+            <div class="portfolio-bento-overlay">
+              <span class="portfolio-bento-category">UI/UX Design</span>
+              <h3 class="portfolio-bento-title">Solas Premium Agency Site</h3>
+              <p class="portfolio-bento-desc">Bespoke portfolio concept showing high-fidelity graphics, customized curves, and glass cells.</p>
+              <a href="#" class="portfolio-bento-link" data-project-id="solas">
+                View Case Study
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Item 5 -->
-      <div class="portfolio-bento-card reveal" data-category="development">
-        <div class="portfolio-bento-img-box">
-          <img src="assets/img/project_doodle.png" alt="Nox E-Commerce" class="portfolio-bento-img">
-          <div class="portfolio-bento-overlay">
-            <span class="portfolio-bento-category">Development</span>
-            <h3 class="portfolio-bento-title">Nox Fashion Store</h3>
-            <p class="portfolio-bento-desc">An elegant responsive high-fashion boutique hub with modular panels and smooth scrolling.</p>
-            <a href="#" class="portfolio-bento-link" data-project-id="nox">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+        <!-- Project Card 5 -->
+        <div class="portfolio-horizontal-card" data-category="development">
+          <div class="portfolio-bento-img-box">
+            <img src="assets/img/project_doodle.png" alt="Nox E-Commerce" class="portfolio-bento-img">
+            <div class="portfolio-bento-overlay">
+              <span class="portfolio-bento-category">Development</span>
+              <h3 class="portfolio-bento-title">Nox Fashion Store</h3>
+              <p class="portfolio-bento-desc">An elegant responsive high-fashion boutique hub with modular panels and smooth scrolling.</p>
+              <a href="#" class="portfolio-bento-link" data-project-id="nox">
+                View Case Study
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Item 6 -->
-      <div class="portfolio-bento-card reveal" data-category="branding">
-        <div class="portfolio-bento-img-box">
-          <img src="assets/img/project_doodle.png" alt="Helios Solar Tech" class="portfolio-bento-img">
-          <div class="portfolio-bento-overlay">
-            <span class="portfolio-bento-category">Branding</span>
-            <h3 class="portfolio-bento-title">Helios Corporate Guidelines</h3>
-            <p class="portfolio-bento-desc">Clean geometric guidelines detailing logo spacing grids and color hierarchies.</p>
-            <a href="#" class="portfolio-bento-link" data-project-id="helios">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -286,7 +286,9 @@
       <div class="bento-card span-6 reveal">
         <div style="margin-bottom: 30px;">
           <span class="badge">Journey</span>
-          <h2 class="display-2" style="font-size: 2.8rem;">my path.</h2>
+          <h2 class="display-2" style="font-size: 2.8rem;">
+            <span class="line-mask"><span>my path.</span></span>
+          </h2>
         </div>
         <div class="experience-bento-list">
           <div class="experience-bento-item">
@@ -367,17 +369,20 @@
   </section>
 
   <!-- Bento Contact & Contact Info (Span 12) -->
-  <section class="section container" id="contact" style="padding-bottom: 100px;">
+  <section class="section container" id="contact" style="padding-bottom: 120px;">
     <div class="bento-grid">
       <div class="bento-card span-12 reveal">
         <div style="margin-bottom: 30px;">
           <span class="badge">Contact</span>
-          <h2 class="display-2">let's create together.</h2>
+          <h2 class="display-2">
+            <span class="line-mask"><span>let's create</span></span>
+            <span class="line-mask"><span>together.</span></span>
+          </h2>
         </div>
         
         <div class="bento-grid" style="width: 100%; gap: 40px;">
           <!-- Contact Form (Left/Span 7) -->
-          <div class="span-7">
+          <div class="span-8">
             <form class="contact-bento-form" id="contact-form" onsubmit="event.preventDefault();">
               <div class="form-row">
                 <div class="form-group">
@@ -401,8 +406,8 @@
             </form>
           </div>
           
-          <!-- Contact Widget Info (Right/Span 5) -->
-          <div class="span-5" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <!-- Contact Widget Info (Right/Span 4) -->
+          <div class="span-4" style="display: flex; flex-direction: column; justify-content: space-between;">
             <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; opacity: 0.9; margin-bottom: 30px;">
               Looking to develop a state-of-the-art commercial template or seeking high-fidelity interactive templates? Let's discuss your design files and construct an award-winning site.
             </p>
