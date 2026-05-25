@@ -335,17 +335,41 @@ a {
   margin-bottom: 24px;
 }
 
-/* --- REVEAL ANIMATIONS --- */
+/* --- REVEAL ANIMATIONS (MULTI-DIRECTIONAL MOVEMENT) --- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(60px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal.revealed {
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-down {
+  opacity: 0;
+  transform: translateY(-60px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-down.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0);
 }
 
 /* --- CONTAINER & SECTIONS --- */
@@ -1654,4 +1678,57 @@ a {
   .modal-project-meta {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* --- ELITE BRUTALIST GEOMETRIC OVERRIDES (SHARP CORNERS ONLY) --- */
+*, *::before, *::after {
+  border-radius: 0 !important;
+}
+
+/* Custom Zoom Magnifying Glass on Interactive Bento Cards */
+.bento-card,
+.portfolio-horizontal-card {
+  cursor: zoom-in !important;
+}
+
+/* Force Magnifier Follower to be a minimalist sharp square frame */
+.custom-cursor {
+  border-radius: 0 !important;
+  width: 4px;
+  height: 4px;
+}
+
+.custom-cursor-follower {
+  border-radius: 0 !important;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  background-color: transparent !important;
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s, height 0.3s, border-color 0.3s !important;
+}
+
+.custom-cursor.hovered {
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-purple-light);
+}
+
+.custom-cursor-follower.hovered {
+  width: 38px;
+  height: 38px;
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Disable any distracting card hovers to keep layout raw and static */
+.bento-card:hover {
+  transform: translateY(-2px) !important; /* Extremely subtle flat vertical lift */
+  border-color: var(--border-hover) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Let the creative vinyl disk spin continually to feel alive */
+.vinyl-disc {
+  animation: spin-vinyl 15s linear infinite !important;
+  animation-play-state: running !important;
 }
