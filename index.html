@@ -245,54 +245,57 @@
         </div>
       </div>
 
-      <!-- Cell 7: Spotify Creative Vibe Player (Span 3) -->
-      <div class="bento-card span-3 reveal" id="spotify-card" style="padding: 30px;">
-        <div class="spotify-vibe-widget">
-          <div>
-            <span class="badge" style="margin-bottom: 12px; font-size: 0.65rem;">Creative Vibe</span>
-            <div class="spotify-vinyl-container">
-              <div class="vinyl-disc">
-                <div class="vinyl-center"></div>
-                <div class="vinyl-groove groove-1"></div>
-                <div class="vinyl-groove groove-2"></div>
+      <!-- Cell 7: Command Center Dashboard (Spotify Vibe + Clock Physics) (Span 6) -->
+      <div class="bento-card span-6 reveal" id="dashboard-card" style="padding: 40px; min-height: 480px; justify-content: center;">
+        <span class="badge" style="margin-bottom: 24px; align-self: flex-start;">Creative Control</span>
+        
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; width: 100%; align-items: center;">
+          <!-- Left Side: Spotify Vibe -->
+          <div class="spotify-vibe-widget" style="border-right: 1px solid var(--border-color); padding-right: 24px;">
+            <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 12px;">Active Vibe</span>
+            
+            <div class="spotify-vinyl-container" style="margin: 10px 0; display: flex; justify-content: center;">
+              <div class="vinyl-disc" style="width: 110px; height: 110px;">
+                <div class="vinyl-center" style="width: 32px; height: 32px;"></div>
+                <div class="vinyl-groove groove-1" style="width: 86px; height: 86px;"></div>
+                <div class="vinyl-groove groove-2" style="width: 56px; height: 56px;"></div>
+              </div>
+            </div>
+            
+            <div class="spotify-track-info">
+              <h4 class="spotify-song" style="font-size: 0.95rem; margin-bottom: 2px;">Creative Flow</h4>
+              <p class="spotify-artist" style="font-size: 0.75rem;">John Doe / Ambient</p>
+              
+              <!-- Live Audio Visualizer Equalizer Waves -->
+              <div class="equalizer-wave" style="margin-top: 12px; height: 16px;">
+                <span class="equalizer-bar eq-bar-1"></span>
+                <span class="equalizer-bar eq-bar-2"></span>
+                <span class="equalizer-bar eq-bar-3"></span>
+                <span class="equalizer-bar eq-bar-4"></span>
+                <span class="equalizer-bar eq-bar-5"></span>
               </div>
             </div>
           </div>
           
-          <div class="spotify-track-info">
-            <h4 class="spotify-song">Creative Flow</h4>
-            <p class="spotify-artist">John Doe / Ambient</p>
+          <!-- Right Side: New York Clock & Magnetic Circle -->
+          <div class="clock-widget" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 12px;">Local Time (EST)</span>
+              <div class="clock-face-container" style="margin: 10px 0; display: flex; justify-content: center;">
+                <div class="clock-display" id="live-clock" style="font-size: 1.4rem; padding: 10px 16px;">19:28:45</div>
+              </div>
+            </div>
             
-            <!-- Live Audio Visualizer Equalizer Waves -->
-            <div class="equalizer-wave">
-              <span class="equalizer-bar eq-bar-1"></span>
-              <span class="equalizer-bar eq-bar-2"></span>
-              <span class="equalizer-bar eq-bar-3"></span>
-              <span class="equalizer-bar eq-bar-4"></span>
-              <span class="equalizer-bar eq-bar-5"></span>
+            <div class="magnetic-track-box" style="margin-top: 15px; height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px;">Magnetic Node</span>
+              <div class="magnetic-circle" id="magnetic-target" style="width: 44px; height: 44px;">
+                <div class="magnetic-dot" style="width: 6px; height: 6px;"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Cell 8: World Clock & Magnetic Cursor Target (Span 3) -->
-      <div class="bento-card span-3 reveal" id="clock-card" style="padding: 30px;">
-        <div class="clock-widget">
-          <div>
-            <span class="badge" style="margin-bottom: 12px; font-size: 0.65rem;">New York Time</span>
-            <div class="clock-face-container">
-              <div class="clock-display" id="live-clock">19:28:45</div>
-            </div>
-          </div>
-          
-          <div class="magnetic-track-box">
-            <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px;">Magnetic Ring</span>
-            <div class="magnetic-circle" id="magnetic-target">
-              <div class="magnetic-dot"></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </main>
