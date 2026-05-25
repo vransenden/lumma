@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initLineMaskReveal();
   initHorizontalScroll();
+  initInteractiveCanvas();
   initTestimonialsSlider();
   initProjectModal();
 });
@@ -360,5 +361,33 @@ function initProjectModal() {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
     }
+  });
+}
+
+/* --- INTERACTIVE CANVAS BLUEPRINT TRACKING --- */
+function initInteractiveCanvas() {
+  const card = document.getElementById('hero-doodle-card');
+  const coordTag = document.getElementById('doodle-coords');
+  if (!card || !coordTag) return;
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = Math.max(0, (e.clientX - rect.left)).toFixed(1);
+    const y = Math.max(0, (e.clientY - rect.top)).toFixed(1);
+    coordTag.textContent = `X: ${x} Y: ${y}`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    coordTag.textContent = 'X: 0.0 Y: 0.0';
+  });
+
+  // Toggle active toolbar button for elite interactive fidelity
+  const toolBtns = card.querySelectorAll('.tool-btn');
+  toolBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent triggering coordinate update jumps
+      toolBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
   });
 }
