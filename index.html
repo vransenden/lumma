@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lumma - Premium Award-Winning Static Portfolio HTML5 Template for Creative Developers & Designers">
-  <meta name="keywords" content="portfolio, dark mode, purple theme, creative portfolio, awards, html5 template, developer portfolio, designer website, john doe">
+  <meta name="description" content="Lumma - Premium Award-Winning Bento Grid Static Portfolio HTML5 Template for Creative Developers & Designers">
+  <meta name="keywords" content="portfolio, bento grid, dark mode, black theme, creative portfolio, awards, html5 template, developer portfolio, designer website, john doe">
   <meta name="author" content="Lumma">
-  <title>Lumma | Premium Award-Winning Creative Portfolio</title>
+  <title>Lumma | Premium Award-Winning Bento Portfolio</title>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%238b5cf6'/></svg>">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ffffff'/></svg>">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
   <div class="custom-cursor" id="custom-cursor"></div>
   <div class="custom-cursor-follower" id="custom-follower"></div>
 
-  <!-- Ambient Glow Background -->
+  <!-- Ambient Glow Background (3 Subtle Back-Glows Only) -->
   <div class="bg-glow-container">
     <div class="glow-blob glow-blob-1"></div>
     <div class="glow-blob glow-blob-2"></div>
@@ -29,7 +29,7 @@
 
   <!-- Preloader Screen -->
   <div class="preloader" id="preloader">
-    <div class="preloader-logo" id="preloader-logo">LUMMA<span>.</span></div>
+    <div class="preloader-logo" id="preloader-logo">LUMMA.</div>
     <div class="preloader-bar-container">
       <div class="preloader-bar"></div>
     </div>
@@ -38,21 +38,19 @@
   <!-- Header Section -->
   <header class="header" id="header">
     <div class="container nav-container">
-      <a href="#home" class="logo" id="logo">LUMMA<span>.</span></a>
+      <a href="#home" class="logo" id="logo">LUMMA.</a>
       
       <!-- Nav Links -->
       <ul class="nav-links" id="nav-links">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#work" class="nav-link">Work</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       
       <!-- Navigation CTA -->
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+        <a href="#contact" class="btn btn-secondary" style="padding: 10px 20px; border-radius: 20px; font-size: 0.85rem;">Let's Talk</a>
         <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle Menu">
           <span></span>
           <span></span>
@@ -62,282 +60,217 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <!-- Hero Content -->
-      <div class="hero-content reveal">
-        <span class="hero-subtitle">Creative Developer & Designer</span>
-        <h1 class="hero-title text-gradient">Crafting Digital Masterpieces.</h1>
-        <p class="hero-description">
-          Hi, I'm John Doe. I build premium, award-winning interactive websites that seamlessly combine high-end aesthetics with clean, robust code for global brands and agencies.
+  <!-- Bento Grid Showcase Section -->
+  <main class="section container" id="home" style="padding-top: 140px;">
+    <div class="bento-grid">
+      
+      <!-- Cell 1: Giant Typography Hero Cell (Span 8) -->
+      <div class="bento-card span-8 bento-hero-intro reveal">
+        <span class="badge" style="align-self: flex-start;">John Doe &mdash; Creative Dev</span>
+        <h1 class="display-1 text-gradient bento-hero-title">crafting digital masterpieces.</h1>
+        <p class="bento-hero-desc">
+          I build high-end, award-winning interactive websites that combine sleek, pure black aesthetics with clean, premium code structures.
         </p>
-        <div class="hero-cta">
-          <a href="#work" class="btn btn-primary">
-            View My Works
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-          <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+        <div class="bento-hero-cta">
+          <a href="#work" class="btn btn-primary">Explore Works</a>
+          <a href="#contact" class="btn btn-secondary">Let's Connect</a>
         </div>
       </div>
       
-      <!-- Hero Doodle Image -->
-      <div class="hero-image-wrapper reveal">
-        <div class="hero-image-glow"></div>
-        <img src="assets/hero_doodle.png" alt="Creative Doodle Character John Doe" class="hero-image" id="hero-img">
+      <!-- Cell 2: Purple Doodle Showcase Cell (Span 4) -->
+      <div class="bento-card span-4 bento-doodle-cell reveal">
+        <div class="bento-doodle-glow"></div>
+        <img src="assets/img/hero_doodle.png" alt="Creative Doodle Character" class="bento-doodle-img">
       </div>
-    </div>
-  </section>
 
-  <!-- About Section -->
-  <section class="section about" id="about">
-    <div class="container about-grid">
-      <!-- About Image -->
-      <div class="about-image-wrapper reveal">
-        <img src="assets/about_doodle.png" alt="Brainstorming and skills illustration" class="about-image" id="about-img">
-      </div>
-      
-      <!-- About Info -->
-      <div class="about-content reveal">
-        <span class="about-content-subtitle">About Me</span>
-        <h2 class="about-content-title">Innovating design & reliable code.</h2>
-        <p class="about-text">
-          As a developer focused on premium user interactions, I translate ambitious designs into pixel-perfect, lightning-fast web experiences. I bridge the gap between creative visual artistry and robust technical architecture to create products that wow audiences and win digital awards.
-        </p>
-        
-        <!-- Stats Grid -->
-        <div class="about-stats">
-          <div class="stat-item glass-card">
-            <div class="stat-number">05+</div>
-            <div class="stat-label">Years Exp</div>
+      <!-- Cell 3: Interactive Skills & About Text (Span 8) -->
+      <div class="bento-card span-8 reveal" id="about">
+        <div>
+          <span class="badge">About Me</span>
+          <h2 class="display-2" style="margin-bottom: 20px;">innovating design & robust code.</h2>
+          <p class="bento-about-text">
+            I specialize in translating ambitious, complex designs into highly-responsive, lightning-fast static templates. By blending interactive layout mechanics with clean components, I create products that look visually stunning while meeting the strict demands of elite ThemeForest authors.
+          </p>
+        </div>
+        <div class="contact-info-widget" style="border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 10px;">
+          <div class="info-widget-item">
+            <span class="info-widget-label">Core Stacks</span>
+            <span class="info-widget-value">HTML5 / Vanilla CSS3 / JS ES6</span>
           </div>
-          <div class="stat-item glass-card">
-            <div class="stat-number">80+</div>
-            <div class="stat-label">Completed Projects</div>
+          <div class="info-widget-item">
+            <span class="info-widget-label">Interactive Focus</span>
+            <span class="info-widget-value">Bento Grid / Custom Easing</span>
           </div>
-          <div class="stat-item glass-card">
-            <div class="stat-number">12+</div>
-            <div class="stat-label">Design Awards</div>
+          <div class="info-widget-item">
+            <span class="info-widget-label">Availability</span>
+            <span class="info-widget-value">Open for Freelance & Custom Themes</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="badge">My Services</span>
-        <h2 class="section-title">Areas of Expertise</h2>
-      </div>
-      
-      <div class="services-grid">
-        <!-- Service Card 1 -->
-        <div class="service-card glass-card reveal">
-          <div class="service-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 class="service-title">UI/UX Design</h3>
-          <p class="service-desc">Creating beautiful, premium user journeys, interactive design systems, and stunning wireframes optimized for high conversions.</p>
-          <ul class="service-list">
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              High-Fidelity Wireframes
-            </li>
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Interactive Prototypes
-            </li>
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Premium Design Systems
-            </li>
-          </ul>
+      <!-- Cell 4: Large Stats Cell (Span 4) -->
+      <div class="bento-card span-4 bento-stats-cell reveal">
+        <div class="bento-stat-item">
+          <div class="bento-stat-number text-gradient">05+</div>
+          <div class="bento-stat-label">Years Exp</div>
         </div>
-        
-        <!-- Service Card 2 -->
-        <div class="service-card glass-card reveal">
-          <div class="service-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-          </div>
-          <h3 class="service-title">Creative Development</h3>
-          <p class="service-desc">Engineering fluid layouts, clean transitions, modern micro-interactions, and premium award-winning code optimized for performance.</p>
-          <ul class="service-list">
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Highly Semantic HTML5/CSS3
-            </li>
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              GSAP & Vanilla Micro-Animations
-            </li>
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Optimized Loading & Performance
-            </li>
-          </ul>
+        <div style="width: 1px; height: 60px; background-color: var(--border-color);"></div>
+        <div class="bento-stat-item">
+          <div class="bento-stat-number text-gradient">80+</div>
+          <div class="bento-stat-label">Projects</div>
         </div>
-        
-        <!-- Service Card 3 -->
-        <div class="service-card glass-card reveal">
-          <div class="service-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-          </div>
-          <h3 class="service-title">SaaS & App Architecture</h3>
-          <p class="service-desc">Architecting robust dashboards, sleek single page structures, modular web apps, and clean rest API connections with precision.</p>
-          <ul class="service-list">
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Modular SPA Engineering
-            </li>
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Interactive Data Dashboards
-            </li>
-            <li class="service-list-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              API & Database Integration
-            </li>
-          </ul>
+        <div style="width: 1px; height: 60px; background-color: var(--border-color);"></div>
+        <div class="bento-stat-item">
+          <div class="bento-stat-number text-gradient">12+</div>
+          <div class="bento-stat-label">Awards</div>
         </div>
       </div>
+
+      <!-- Cell 5: Services Bento Cell (Span 12) -->
+      <div class="bento-card span-12 reveal">
+        <div style="margin-bottom: 30px;">
+          <span class="badge">Expertise</span>
+          <h2 class="display-2">premium web services.</h2>
+        </div>
+        <div class="services-container">
+          <!-- Service item 1 -->
+          <div class="service-bento-item">
+            <div class="service-bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="service-bento-title">UI/UX Design</h3>
+            <p class="service-bento-desc">Crafting premium, responsive interface systems, detailed wireframes, and gorgeous visual mockups tailored for conversion.</p>
+          </div>
+          <!-- Service item 2 -->
+          <div class="service-bento-item">
+            <div class="service-bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="service-bento-title">Creative Coding</h3>
+            <p class="service-bento-desc">Developing semantic markup structures, interactive hover cues, lightweight CSS curves, and flawless responsive sizing models.</p>
+          </div>
+          <!-- Service item 3 -->
+          <div class="service-bento-item">
+            <div class="service-bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="service-bento-title">SaaS Architecture</h3>
+            <p class="service-bento-desc">Engineering optimized modular applications, clean dashboard layers, structural navigation frameworks, and reliable API setups.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </main>
 
   <!-- Portfolio / Work Section -->
-  <section class="section portfolio" id="work">
-    <div class="container">
-      <div class="section-header reveal">
+  <section class="section container" id="work">
+    <div class="portfolio-header-box reveal">
+      <div>
         <span class="badge">Portfolio</span>
-        <h2 class="section-title">Selected Works</h2>
+        <h2 class="display-2">featured works.</h2>
       </div>
-      
-      <!-- Portfolio Filters -->
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="design">UI/UX Design</button>
+      <!-- Filters -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="design">Design</button>
         <button class="filter-btn" data-filter="development">Development</button>
         <button class="filter-btn" data-filter="branding">Branding</button>
       </div>
-      
-      <!-- Portfolio Grid -->
-      <div class="portfolio-grid">
-        <!-- Item 1 -->
-        <div class="portfolio-item glass-card reveal" data-category="design" id="proj-lumina">
-          <div class="portfolio-img-box">
-            <img src="assets/project_doodle.png" alt="Lumina Dashboard Mockup" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <span class="portfolio-overlay-tag">UI/UX Design</span>
-              <h3 class="portfolio-overlay-title">Lumina Analytics Dashboard</h3>
-            </div>
-          </div>
-          <div class="portfolio-info">
-            <span class="portfolio-tag">UI/UX Design</span>
-            <h3 class="portfolio-title">Lumina Dashboard</h3>
-            <p class="portfolio-desc">A premium cloud metrics tracking dashboard built for visual telemetry tracking.</p>
-            <a href="#" class="portfolio-link" data-project-id="lumina">
-              Explore Case Study
+    </div>
+    
+    <!-- Bento Portfolio Grid -->
+    <div class="portfolio-bento-grid">
+      <!-- Item 1 -->
+      <div class="portfolio-bento-card reveal" data-category="design">
+        <div class="portfolio-bento-img-box">
+          <img src="assets/img/project_doodle.png" alt="Lumina Analytics" class="portfolio-bento-img">
+          <div class="portfolio-bento-overlay">
+            <span class="portfolio-bento-category">UI/UX Design</span>
+            <h3 class="portfolio-bento-title">Lumina Analytics Dashboard</h3>
+            <p class="portfolio-bento-desc">A premium cloud telemetry metrics dashboard engineered for high readability and subtle glow highlights.</p>
+            <a href="#" class="portfolio-bento-link" data-project-id="lumina">
+              View Case Study
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
         </div>
-        
-        <!-- Item 2 -->
-        <div class="portfolio-item glass-card reveal" data-category="development" id="proj-aether">
-          <div class="portfolio-img-box">
-            <img src="assets/project_doodle.png" alt="Aether AI Platform Mockup" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <span class="portfolio-overlay-tag">Development</span>
-              <h3 class="portfolio-overlay-title">Aether Intelligent AI Portal</h3>
-            </div>
-          </div>
-          <div class="portfolio-info">
-            <span class="portfolio-tag">Development</span>
-            <h3 class="portfolio-title">Aether AI Portal</h3>
-            <p class="portfolio-desc">An interactive website powered by fluid animations representing complex intelligence nodes.</p>
-            <a href="#" class="portfolio-link" data-project-id="aether">
-              Explore Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Item 3 -->
-        <div class="portfolio-item glass-card reveal" data-category="branding" id="proj-vesper">
-          <div class="portfolio-img-box">
-            <img src="assets/project_doodle.png" alt="Vesper Protocol Branding Design" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <span class="portfolio-overlay-tag">Branding</span>
-              <h3 class="portfolio-overlay-title">Vesper Web3 Protocol Identity</h3>
-            </div>
-          </div>
-          <div class="portfolio-info">
-            <span class="portfolio-tag">Branding</span>
-            <h3 class="portfolio-title">Vesper Protocol</h3>
-            <p class="portfolio-desc">Comprehensive visual design, layouts guidelines, and interactive design token system.</p>
-            <a href="#" class="portfolio-link" data-project-id="vesper">
-              Explore Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </div>
+      </div>
 
-        <!-- Item 4 -->
-        <div class="portfolio-item glass-card reveal" data-category="design" id="proj-solas">
-          <div class="portfolio-img-box">
-            <img src="assets/project_doodle.png" alt="Solas Agency Interactive Website" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <span class="portfolio-overlay-tag">UI/UX Design</span>
-              <h3 class="portfolio-overlay-title">Solas Premium Agency Site</h3>
-            </div>
-          </div>
-          <div class="portfolio-info">
-            <span class="portfolio-tag">UI/UX Design</span>
-            <h3 class="portfolio-title">Solas Creative</h3>
-            <p class="portfolio-desc">A premium portfolio site with immersive glassmorphism cards and smooth custom grids.</p>
-            <a href="#" class="portfolio-link" data-project-id="solas">
-              Explore Case Study
+      <!-- Item 2 -->
+      <div class="portfolio-bento-card reveal" data-category="development">
+        <div class="portfolio-bento-img-box">
+          <img src="assets/img/project_doodle.png" alt="Aether AI" class="portfolio-bento-img">
+          <div class="portfolio-bento-overlay">
+            <span class="portfolio-bento-category">Development</span>
+            <h3 class="portfolio-bento-title">Aether Intelligent AI Portal</h3>
+            <p class="portfolio-bento-desc">An interactive website featuring neural net mockups and lightweight browser transitions.</p>
+            <a href="#" class="portfolio-bento-link" data-project-id="aether">
+              View Case Study
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
         </div>
+      </div>
 
-        <!-- Item 5 -->
-        <div class="portfolio-item glass-card reveal" data-category="development" id="proj-nox">
-          <div class="portfolio-img-box">
-            <img src="assets/project_doodle.png" alt="Nox Premium Fashion E-Commerce" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <span class="portfolio-overlay-tag">Development</span>
-              <h3 class="portfolio-overlay-title">Nox High-Fashion Store</h3>
-            </div>
-          </div>
-          <div class="portfolio-info">
-            <span class="portfolio-tag">Development</span>
-            <h3 class="portfolio-title">Nox E-Commerce</h3>
-            <p class="portfolio-desc">A gorgeous and ultra-responsive fashion hub featuring high-end transition effects.</p>
-            <a href="#" class="portfolio-link" data-project-id="nox">
-              Explore Case Study
+      <!-- Item 3 -->
+      <div class="portfolio-bento-card reveal" data-category="branding">
+        <div class="portfolio-bento-img-box">
+          <img src="assets/img/project_doodle.png" alt="Vesper Web3" class="portfolio-bento-img">
+          <div class="portfolio-bento-overlay">
+            <span class="portfolio-bento-category">Branding</span>
+            <h3 class="portfolio-bento-title">Vesper Web3 Protocol Identity</h3>
+            <p class="portfolio-bento-desc">Futuristic typography scale, custom geometry, and marketing asset brand board guidelines.</p>
+            <a href="#" class="portfolio-bento-link" data-project-id="vesper">
+              View Case Study
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
         </div>
+      </div>
 
-        <!-- Item 6 -->
-        <div class="portfolio-item glass-card reveal" data-category="branding" id="proj-helios">
-          <div class="portfolio-img-box">
-            <img src="assets/project_doodle.png" alt="Helios Solar Tech Visual Guide" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <span class="portfolio-overlay-tag">Branding</span>
-              <h3 class="portfolio-overlay-title">Helios Corporate Guidelines</h3>
-            </div>
+      <!-- Item 4 -->
+      <div class="portfolio-bento-card reveal" data-category="design">
+        <div class="portfolio-bento-img-box">
+          <img src="assets/img/project_doodle.png" alt="Solas Creative" class="portfolio-bento-img">
+          <div class="portfolio-bento-overlay">
+            <span class="portfolio-bento-category">UI/UX Design</span>
+            <h3 class="portfolio-bento-title">Solas Premium Agency Site</h3>
+            <p class="portfolio-bento-desc">Bespoke portfolio concept showing high-fidelity graphics, customized curves, and glass cells.</p>
+            <a href="#" class="portfolio-bento-link" data-project-id="solas">
+              View Case Study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
           </div>
-          <div class="portfolio-info">
-            <span class="portfolio-tag">Branding</span>
-            <h3 class="portfolio-title">Helios Branding</h3>
-            <p class="portfolio-desc">Corporate aesthetics, typography scale, logo architecture, and digital presence guide.</p>
-            <a href="#" class="portfolio-link" data-project-id="helios">
-              Explore Case Study
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="portfolio-bento-card reveal" data-category="development">
+        <div class="portfolio-bento-img-box">
+          <img src="assets/img/project_doodle.png" alt="Nox E-Commerce" class="portfolio-bento-img">
+          <div class="portfolio-bento-overlay">
+            <span class="portfolio-bento-category">Development</span>
+            <h3 class="portfolio-bento-title">Nox Fashion Store</h3>
+            <p class="portfolio-bento-desc">An elegant responsive high-fashion boutique hub with modular panels and smooth scrolling.</p>
+            <a href="#" class="portfolio-bento-link" data-project-id="nox">
+              View Case Study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="portfolio-bento-card reveal" data-category="branding">
+        <div class="portfolio-bento-img-box">
+          <img src="assets/img/project_doodle.png" alt="Helios Solar Tech" class="portfolio-bento-img">
+          <div class="portfolio-bento-overlay">
+            <span class="portfolio-bento-category">Branding</span>
+            <h3 class="portfolio-bento-title">Helios Corporate Guidelines</h3>
+            <p class="portfolio-bento-desc">Clean geometric guidelines detailing logo spacing grids and color hierarchies.</p>
+            <a href="#" class="portfolio-bento-link" data-project-id="helios">
+              View Case Study
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </div>
@@ -346,178 +279,150 @@
     </div>
   </section>
 
-  <!-- Experience / Journey Section -->
-  <section class="section experience" id="experience">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="badge">My Journey</span>
-        <h2 class="section-title">Work Experience</h2>
+  <!-- Combined Bento Experience & Testimonials (Span 12) -->
+  <section class="section container">
+    <div class="bento-grid">
+      <!-- Left Cell: Experience Timeline (Span 6) -->
+      <div class="bento-card span-6 reveal">
+        <div style="margin-bottom: 30px;">
+          <span class="badge">Journey</span>
+          <h2 class="display-2" style="font-size: 2.8rem;">my path.</h2>
+        </div>
+        <div class="experience-bento-list">
+          <div class="experience-bento-item">
+            <span class="exp-year">2024 - Pres</span>
+            <div class="exp-info">
+              <h4 class="exp-title">Senior Creative Developer</h4>
+              <span class="exp-company">PixelPerfect Agency</span>
+            </div>
+          </div>
+          <div class="experience-bento-item">
+            <span class="exp-year">2022 - 2024</span>
+            <div class="exp-info">
+              <h4 class="exp-title">UI/UX Architect</h4>
+              <span class="exp-company">CreativeLabs Studio</span>
+            </div>
+          </div>
+          <div class="experience-bento-item">
+            <span class="exp-year">2020 - 2022</span>
+            <div class="exp-info">
+              <h4 class="exp-title">Frontend Engineer</h4>
+              <span class="exp-company">TechVibe Solutions</span>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="timeline-container">
-        <!-- Experience 1 -->
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <span class="timeline-badge">2024 - Present</span>
-          <div class="timeline-card glass-card">
-            <h3 class="timeline-title">Senior Creative Developer</h3>
-            <p class="timeline-subtitle">PixelPerfect Digital Agency</p>
-            <p class="timeline-desc">Leading frontend production for interactive sites, building high-end responsive layout structures, modular JavaScript utilities, and crafting premium custom-designed digital solutions winning several digital honors.</p>
+
+      <!-- Right Cell: Interactive Testimonials Slider (Span 6) -->
+      <div class="bento-card span-6 reveal" style="justify-content: space-between;">
+        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          <span class="badge">Testimonials</span>
+          <div class="testimonial-bento-controls">
+            <button class="testimonial-bento-btn" id="testimonial-prev" aria-label="Previous Testimonial">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+            <button class="testimonial-bento-btn" id="testimonial-next" aria-label="Next Testimonial">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
           </div>
         </div>
         
-        <!-- Experience 2 -->
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <span class="timeline-badge">2022 - 2024</span>
-          <div class="timeline-card glass-card">
-            <h3 class="timeline-title">UI/UX Architect</h3>
-            <p class="timeline-subtitle">CreativeLabs Studio</p>
-            <p class="timeline-desc">Crafted interactive SaaS dashboard architectures, sleek interactive components, design system management, and responsive mockups. Coordinated design-to-development logic frameworks smoothly.</p>
-          </div>
-        </div>
-        
-        <!-- Experience 3 -->
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <span class="timeline-badge">2020 - 2022</span>
-          <div class="timeline-card glass-card">
-            <h3 class="timeline-title">Frontend Engineer</h3>
-            <p class="timeline-subtitle">TechVibe Software Solutions</p>
-            <p class="timeline-desc">Programmed responsive interface features, performed deep optimization audits, resolved performance gaps, and implemented custom widgets across several customer web portals.</p>
+        <!-- Slider Container -->
+        <div style="overflow: hidden; width: 100%; margin-bottom: 20px;">
+          <div class="bento-testimonials-container" id="testimonials-container">
+            <!-- Slide 1 -->
+            <div class="testimonial-bento-slide">
+              <p class="testimonial-bento-quote">
+                "John is an absolute genius in creative engineering. He turned our heavy mockup wireframes into an incredibly fluid, ultra-responsive website that completely set our SaaS brand apart from competitors."
+              </p>
+              <div class="testimonial-bento-author">
+                <span class="test-author-name">David Vesper</span>
+                <span class="test-author-role">CEO, Aether Inc</span>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testimonial-bento-slide">
+              <p class="testimonial-bento-quote">
+                "Outstanding frontend expert. The visual flow, responsive layout performance, and custom micro-interactions on Lumma have set a brand new benchmark for our digital projects. Strongly recommended."
+              </p>
+              <div class="testimonial-bento-author">
+                <span class="test-author-name">Sarah Jenkins</span>
+                <span class="test-author-role">Creative Dir, PixelPerfect</span>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="testimonial-bento-slide">
+              <p class="testimonial-bento-quote">
+                "A rare developer with pure design intuition. John Doe works with incredible precision, delivering clean, standard code that is easy to expand and maintain. A master of creative HTML templates."
+              </p>
+              <div class="testimonial-bento-author">
+                <span class="test-author-name">Marcus Finch</span>
+                <span class="test-author-role">Founder, Nox Shop</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="section testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-header reveal" style="text-align: center; margin: 0 auto 60px;">
-        <span class="badge">Testimonials</span>
-        <h2 class="section-title">What Clients Say</h2>
-      </div>
-      
-      <!-- Slider -->
-      <div class="testimonials-slider glass-card reveal">
-        <div class="testimonials-container" id="testimonials-container">
-          <!-- Slide 1 -->
-          <div class="testimonial-slide">
-            <p class="testimonial-quote">
-              "John is an absolute genius in creative engineering. He turned our heavy mockup wireframes into an incredibly fluid, ultra-responsive website that completely set our SaaS brand apart from competitors."
-            </p>
-            <div class="testimonial-author-box">
-              <h4 class="testimonial-name">David Vesper</h4>
-              <span class="testimonial-role">CEO, Aether Analytics</span>
-            </div>
+  <!-- Bento Contact & Contact Info (Span 12) -->
+  <section class="section container" id="contact" style="padding-bottom: 100px;">
+    <div class="bento-grid">
+      <div class="bento-card span-12 reveal">
+        <div style="margin-bottom: 30px;">
+          <span class="badge">Contact</span>
+          <h2 class="display-2">let's create together.</h2>
+        </div>
+        
+        <div class="bento-grid" style="width: 100%; gap: 40px;">
+          <!-- Contact Form (Left/Span 7) -->
+          <div class="span-7">
+            <form class="contact-bento-form" id="contact-form" onsubmit="event.preventDefault();">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-input" placeholder="Premium Web Development" required>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-textarea" placeholder="Outline your product concept here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top: 10px; padding: 14px 0;">Send Message</button>
+            </form>
           </div>
           
-          <!-- Slide 2 -->
-          <div class="testimonial-slide">
-            <p class="testimonial-quote">
-              "Outstanding frontend expert. The visual flow, responsive layout performance, and custom micro-interactions on Lumma have set a brand new benchmark for our digital projects. Strongly recommended."
+          <!-- Contact Widget Info (Right/Span 5) -->
+          <div class="span-5" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; opacity: 0.9; margin-bottom: 30px;">
+              Looking to develop a state-of-the-art commercial template or seeking high-fidelity interactive templates? Let's discuss your design files and construct an award-winning site.
             </p>
-            <div class="testimonial-author-box">
-              <h4 class="testimonial-name">Sarah Jenkins</h4>
-              <span class="testimonial-role">Creative Director, PixelPerfect Agency</span>
-            </div>
-          </div>
-          
-          <!-- Slide 3 -->
-          <div class="testimonial-slide">
-            <p class="testimonial-quote">
-              "A rare developer with pure design intuition. John Doe works with incredible precision, delivering clean, standard code that is easy to expand and maintain. A master of creative HTML templates."
-            </p>
-            <div class="testimonial-author-box">
-              <h4 class="testimonial-name">Marcus Finch</h4>
-              <span class="testimonial-role">Founder, Nox E-Commerce</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Navigation Buttons -->
-        <div class="testimonials-controls">
-          <button class="testimonial-control-btn" id="testimonial-prev" aria-label="Previous Testimonial">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-          </button>
-          <button class="testimonial-control-btn" id="testimonial-next" aria-label="Next Testimonial">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="badge">Get in Touch</span>
-        <h2 class="section-title">Let's Create Together</h2>
-      </div>
-      
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div class="contact-info reveal">
-          <div class="contact-info-list">
-            <!-- Item 1 -->
-            <div class="contact-info-item">
-              <div class="contact-info-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </div>
-              <div>
-                <h4 class="contact-info-title">Email Me</h4>
-                <a href="mailto:hello@lumma.studio" class="contact-info-value">hello@lumma.studio</a>
-              </div>
-            </div>
             
-            <!-- Item 2 -->
-            <div class="contact-info-item">
-              <div class="contact-info-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <div class="contact-info-widget">
+              <div class="info-widget-item">
+                <span class="info-widget-label">Email</span>
+                <a href="mailto:hello@lumma.studio" class="info-widget-value">hello@lumma.studio</a>
               </div>
-              <div>
-                <h4 class="contact-info-title">Call Me</h4>
-                <a href="tel:+15552345678" class="contact-info-value">+1 (555) 234-5678</a>
+              <div class="info-widget-item">
+                <span class="info-widget-label">Call</span>
+                <a href="tel:+15552345678" class="info-widget-value">+1 (555) 234-5678</a>
               </div>
-            </div>
-            
-            <!-- Item 3 -->
-            <div class="contact-info-item">
-              <div class="contact-info-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              </div>
-              <div>
-                <h4 class="contact-info-title">Location</h4>
-                <span class="contact-info-value">New York City, NY, USA</span>
+              <div class="info-widget-item">
+                <span class="info-widget-label">Location</span>
+                <span class="info-widget-value">New York, NY, USA</span>
               </div>
             </div>
           </div>
         </div>
-        
-        <!-- Contact Form -->
-        <form class="contact-form glass-card reveal" id="contact-form" onsubmit="event.preventDefault();">
-          <div class="form-group-row">
-            <div class="form-group">
-              <label for="name" class="form-label">Full Name</label>
-              <input type="text" id="name" class="form-input" placeholder="John Doe" required>
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" id="subject" class="form-input" placeholder="Web Development Project" required>
-          </div>
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" class="form-textarea" placeholder="Describe your creative project idea here..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-        </form>
       </div>
     </div>
   </section>
@@ -526,21 +431,21 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer-top">
-        <a href="#home" class="footer-logo">LUMMA<span>.</span></a>
+        <a href="#home" class="footer-logo">LUMMA.</a>
         
         <!-- Socials -->
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
           <a href="#" class="footer-social-link" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
           <a href="#" class="footer-social-link" aria-label="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
           </a>
           <a href="#" class="footer-social-link" aria-label="Dribbble">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.49-11.05 1-11.6 8.56"></path></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.49-11.05 1-11.6 8.56"></path></svg>
           </a>
         </div>
       </div>
@@ -562,28 +467,28 @@
     <div class="project-modal-backdrop" id="modal-backdrop"></div>
     <div class="project-modal-content">
       <button class="project-modal-close-btn" id="modal-close-btn" aria-label="Close Modal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
       
-      <img src="assets/project_doodle.png" alt="Project Detail Illustration" class="modal-project-img" id="modal-img">
+      <img src="assets/img/project_doodle.png" alt="Project Detail" class="modal-project-img" id="modal-img">
       
       <div class="modal-project-header">
         <div>
-          <span class="modal-project-tag" id="modal-category">Web Design</span>
-          <h3 class="modal-project-title" id="modal-title">Project Name</h3>
+          <span class="modal-project-tag" id="modal-category">Design</span>
+          <h3 class="modal-project-title" id="modal-title">Project Title</h3>
         </div>
-        <a href="#" class="btn btn-primary" style="padding: 10px 20px;" id="modal-demo-link" target="_blank">Live Preview</a>
+        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" id="modal-demo-link" target="_blank">Live Preview</a>
       </div>
       
       <!-- Meta Fields -->
       <div class="modal-project-meta">
         <div>
           <div class="meta-field-label">Client</div>
-          <div class="meta-field-value" id="modal-client">Aether Inc.</div>
+          <div class="meta-field-value" id="modal-client">Client Name</div>
         </div>
         <div>
           <div class="meta-field-label">Services</div>
-          <div class="meta-field-value" id="modal-services">UI/UX Design & Coding</div>
+          <div class="meta-field-value" id="modal-services">UI/UX & Code</div>
         </div>
         <div>
           <div class="meta-field-label">Year</div>
@@ -591,17 +496,17 @@
         </div>
         <div>
           <div class="meta-field-label">Frameworks</div>
-          <div class="meta-field-value" id="modal-frameworks">HTML5 / Vanilla CSS3 / JS</div>
+          <div class="meta-field-value" id="modal-frameworks">HTML5 / CSS / JS</div>
         </div>
       </div>
       
       <p class="modal-project-description" id="modal-desc">
-        This is a comprehensive overview of the design architecture, user flows, layout integrations, and technical deployment.
+        Project case study detailed layout explanation goes here.
       </p>
     </div>
   </div>
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
