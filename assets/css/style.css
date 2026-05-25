@@ -1657,12 +1657,46 @@ a {
 }
 
 @media (max-width: 768px) {
+  /* 1. App-like layout lock & compact margins */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  section {
+    padding: 48px 0 !important;
+  }
+  
+  .container {
+    padding: 0 16px !important;
+  }
+  
+  /* 2. Compact Grid & Gaps */
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .span-12, .span-8, .span-6, .span-4 {
+    grid-column: span 1 !important;
+  }
+  
+  .bento-card {
+    padding: 24px !important;
+  }
+  
+  /* 3. Sleek Mobile Sticky Header */
   .header {
-    padding: 24px 0;
+    padding: 16px 0 !important;
+    background-color: rgba(8, 8, 12, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
   }
-  .mobile-menu-btn {
-    display: flex;
-  }
+  
   .nav-links {
     position: fixed;
     top: 0;
@@ -1681,99 +1715,261 @@ a {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
+  
   .nav-links.active {
     right: 0;
   }
+  
   .nav-actions {
     margin-right: 40px;
   }
-  .bento-grid {
-    grid-template-columns: 1fr;
+  
+  /* 4. Hero Section Mobile CTA Formats */
+  .bento-hero-title {
+    font-size: 2.2rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 16px !important;
   }
-  .span-12, .span-8, .span-6, .span-4 {
-    grid-column: span 1;
+  
+  .line-mask span {
+    white-space: normal !important;
   }
+  
   .bento-hero-cta {
-    flex-direction: column;
-  }
-  .bento-stats-cell {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .stat-separator {
-    width: 60px !important;
-    height: 1px !important;
-    margin: 10px auto !important;
-  }
-  .timeline-item {
-    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    width: 100% !important;
     gap: 12px !important;
   }
+  
+  .bento-hero-cta .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+  }
+  
+  /* 5. Dashboard-style Horizontal Stats */
+  .bento-stats-cell {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 20px !important;
+  }
+  
+  .bento-stat-item {
+    flex: 1 !important;
+    text-align: center !important;
+  }
+  
+  .bento-stat-number {
+    font-size: 1.6rem !important;
+    font-weight: 900 !important;
+  }
+  
+  .bento-stat-label {
+    font-size: 0.65rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-top: 4px !important;
+  }
+  
+  .stat-separator {
+    width: 1px !important;
+    height: 36px !important;
+    background-color: var(--border-color) !important;
+    margin: 0 !important;
+  }
+  
+  /* 6. Mobile List-style Services container */
+  .services-container {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  
+  .service-bento-item {
+    padding: 20px 0 !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+  
+  .service-bento-item:last-child {
+    border-bottom: none !important;
+  }
+  
+  .service-bento-icon {
+    width: 42px !important;
+    height: 42px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .service-bento-title {
+    font-size: 1.15rem !important;
+  }
+  
+  /* 7. Segmented App-style Pricing Estimator */
+  .estimator-scope-select {
+    display: flex !important;
+    flex-direction: row !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 4px !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+  
+  .scope-btn {
+    flex: 1 !important;
+    padding: 8px 4px !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+  }
+  
+  .estimator-addons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  
+  .addon-chip {
+    flex: 1 1 calc(50% - 8px) !important;
+    font-size: 0.75rem !important;
+    padding: 10px 4px !important;
+    justify-content: center !important;
+  }
+  
+  .estimator-footer {
+    padding-top: 16px !important;
+  }
+  
+  /* 8. Command Center Grid Collapsing */
   .dashboard-grid {
     grid-template-columns: 1fr !important;
-    gap: 40px !important;
+    gap: 32px !important;
   }
+  
   .spotify-vibe-widget {
     border-right: none !important;
     border-bottom: 1px solid var(--border-color) !important;
     padding-right: 0 !important;
-    padding-bottom: 30px !important;
+    padding-bottom: 24px !important;
   }
+  
+  .spotify-vinyl-container {
+    margin: 12px 0 !important;
+  }
+  
+  .vinyl-disc {
+    width: 96px !important;
+    height: 96px !important;
+  }
+  
+  .vinyl-center {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  .vinyl-groove.groove-1 {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  .clock-display {
+    padding: 10px 16px !important;
+    font-size: 1.5rem !important;
+  }
+  
+  /* 9. Compact Selected Works vertical stack */
+  .horizontal-scroll-track {
+    gap: 16px !important;
+    padding: 0 !important;
+  }
+  
+  .portfolio-horizontal-card {
+    min-height: 350px !important;
+  }
+  
+  .portfolio-bento-overlay {
+    padding: 24px !important;
+  }
+  
+  .portfolio-bento-title {
+    font-size: 1.35rem !important;
+  }
+  
+  .portfolio-bento-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* 10. Sleek Timeline */
+  .timeline-item {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding-bottom: 24px !important;
+  }
+  
+  /* 11. Modal Stacks */
   .project-modal-content {
-    padding: 30px 20px !important;
+    padding: 24px 16px !important;
   }
+  
   .modal-project-header {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 16px !important;
   }
+  
+  .modal-project-meta {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
   .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
+  
   .footer-top {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+    flex-direction: column !important;
+    gap: 24px !important;
   }
+  
   .footer-bottom {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
+    flex-direction: column !important;
+    gap: 16px !important;
   }
+  
   .custom-cursor, .custom-cursor-follower {
     display: none !important;
-  }
-  .modal-project-meta {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
-  html, body {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
+  .bento-card {
+    padding: 20px !important;
   }
+  
   .display-1 {
-    font-size: 2rem !important;
-  }
-  .display-2 {
-    font-size: 1.6rem !important;
-  }
-  .estimator-scope-select {
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-  .estimator-addons {
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-  }
-  .estimator-footer {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-  .estimator-price-value {
     font-size: 1.8rem !important;
+  }
+  
+  .display-2 {
+    font-size: 1.4rem !important;
+  }
+  
+  .bento-stats-cell {
+    padding: 16px 12px !important;
+  }
+  
+  .bento-stat-number {
+    font-size: 1.35rem !important;
+  }
+  
+  .bento-stat-label {
+    font-size: 0.6rem !important;
+  }
+  
+  .addon-chip {
+    flex: 1 1 100% !important;
   }
 }
 
