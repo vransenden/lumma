@@ -1595,23 +1595,35 @@ a {
     grid-template-columns: 1fr;
   }
   .horizontal-scroll-container {
-    height: auto;
+    height: auto !important;
   }
   .horizontal-scroll-sticky {
-    position: relative;
-    height: auto;
-    overflow: visible;
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 60px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .horizontal-scroll-sticky > .container {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: 1 !important;
+    margin-bottom: 40px !important;
+    padding: 0 30px !important;
   }
   .horizontal-scroll-track {
-    flex-direction: column;
-    padding: 0 30px;
-    width: 100%;
+    flex-direction: column !important;
+    padding: 0 30px !important;
+    width: 100% !important;
     transform: none !important;
   }
   .portfolio-horizontal-card {
-    width: 100%;
-    height: auto;
-    min-height: 400px;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
   }
 }
 
@@ -1659,6 +1671,33 @@ a {
     flex-direction: column;
     gap: 30px;
   }
+  .stat-separator {
+    width: 60px !important;
+    height: 1px !important;
+    margin: 10px auto !important;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .spotify-vibe-widget {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding-right: 0 !important;
+    padding-bottom: 30px !important;
+  }
+  .project-modal-content {
+    padding: 30px 20px !important;
+  }
+  .modal-project-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1677,6 +1716,35 @@ a {
   }
   .modal-project-meta {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  .display-1 {
+    font-size: 2rem !important;
+  }
+  .display-2 {
+    font-size: 1.6rem !important;
+  }
+  .estimator-scope-select {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .estimator-addons {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .estimator-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .estimator-price-value {
+    font-size: 1.8rem !important;
   }
 }
 
