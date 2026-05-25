@@ -54,7 +54,7 @@ function initCustomCursor() {
   updateFollower();
 
   // Hover states for interactive elements
-  const hoverElements = document.querySelectorAll('a, button, .filter-btn, .portfolio-link, input, textarea, .testimonial-control-btn');
+  const hoverElements = document.querySelectorAll('a, button, .filter-btn, .portfolio-bento-link, input, textarea, .testimonial-bento-btn');
   hoverElements.forEach(elem => {
     elem.addEventListener('mouseenter', () => {
       cursor.classList.add('hovered');
@@ -128,7 +128,7 @@ function initScrollReveal() {
 /* --- DYNAMIC PORTFOLIO INTERACTIVE FILTER --- */
 function initPortfolioFilter() {
   const buttons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.portfolio-item');
+  const items = document.querySelectorAll('.portfolio-bento-card');
   if (buttons.length === 0 || items.length === 0) return;
 
   buttons.forEach(btn => {
@@ -165,7 +165,7 @@ function initPortfolioFilter() {
 /* --- TESTIMONIALS SLIDER NAVIGATION --- */
 function initTestimonialsSlider() {
   const container = document.getElementById('testimonials-container');
-  const slides = document.querySelectorAll('.testimonial-slide');
+  const slides = document.querySelectorAll('.testimonial-bento-slide');
   const btnPrev = document.getElementById('testimonial-prev');
   const btnNext = document.getElementById('testimonial-next');
   if (!container || slides.length === 0 || !btnPrev || !btnNext) return;
@@ -200,7 +200,7 @@ function initProjectModal() {
   const modal = document.getElementById('project-modal');
   const backdrop = document.getElementById('modal-backdrop');
   const closeBtn = document.getElementById('modal-close-btn');
-  const openButtons = document.querySelectorAll('.portfolio-link');
+  const openButtons = document.querySelectorAll('.portfolio-bento-link');
 
   if (!modal || !backdrop || !closeBtn || openButtons.length === 0) return;
 
