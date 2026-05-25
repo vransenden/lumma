@@ -1663,6 +1663,17 @@ a {
     max-width: 100% !important;
   }
   
+  /* Preloader App Scaling */
+  .preloader-logo {
+    font-size: 2.6rem !important;
+    letter-spacing: -1.5px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .preloader-bar-container {
+    width: 140px !important;
+  }
+  
   section {
     padding: 48px 0 !important;
   }
