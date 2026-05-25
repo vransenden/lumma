@@ -205,6 +205,95 @@
         </div>
       </div>
 
+      <!-- Cell 6: Project Pricing Scope Estimator (Span 6) -->
+      <div class="bento-card span-6 reveal" id="estimator-card">
+        <div>
+          <span class="badge">Dynamic Configurator</span>
+          <h2 class="display-2" style="margin-bottom: 20px; font-size: 2.3rem;">
+            <span class="line-mask"><span>estimate project</span></span>
+            <span class="line-mask"><span>scope.</span></span>
+          </h2>
+          
+          <!-- Scope Selector Pill buttons -->
+          <div class="estimator-scope-select">
+            <button type="button" class="scope-btn active" data-scope="design" data-base="1500">Design</button>
+            <button type="button" class="scope-btn" data-scope="code" data-base="2500">Code Only</button>
+            <button type="button" class="scope-btn" data-scope="full" data-base="3800">Full Stack</button>
+          </div>
+          
+          <!-- Page slider scope -->
+          <div class="estimator-slider-group">
+            <div class="estimator-slider-header">
+              <span>Project Pages</span>
+              <span id="pages-value">3 Pages</span>
+            </div>
+            <input type="range" min="1" max="12" value="3" class="estimator-range" id="pages-range">
+          </div>
+          
+          <!-- Premium Addon Toggles -->
+          <div class="estimator-addons">
+            <button type="button" class="addon-chip" data-premium="250">SEO Ready</button>
+            <button type="button" class="addon-chip" data-premium="500">Motion Pack</button>
+            <button type="button" class="addon-chip" data-premium="400">Fast Delivery</button>
+          </div>
+        </div>
+        
+        <!-- Live estimating output -->
+        <div class="estimator-footer">
+          <span class="estimator-price-label">Estimated Price</span>
+          <span class="estimator-price-value" id="price-counter">$2,250</span>
+        </div>
+      </div>
+
+      <!-- Cell 7: Spotify Creative Vibe Player (Span 3) -->
+      <div class="bento-card span-3 reveal" id="spotify-card" style="padding: 30px;">
+        <div class="spotify-vibe-widget">
+          <div>
+            <span class="badge" style="margin-bottom: 12px; font-size: 0.65rem;">Creative Vibe</span>
+            <div class="spotify-vinyl-container">
+              <div class="vinyl-disc">
+                <div class="vinyl-center"></div>
+                <div class="vinyl-groove groove-1"></div>
+                <div class="vinyl-groove groove-2"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="spotify-track-info">
+            <h4 class="spotify-song">Creative Flow</h4>
+            <p class="spotify-artist">John Doe / Ambient</p>
+            
+            <!-- Live Audio Visualizer Equalizer Waves -->
+            <div class="equalizer-wave">
+              <span class="equalizer-bar eq-bar-1"></span>
+              <span class="equalizer-bar eq-bar-2"></span>
+              <span class="equalizer-bar eq-bar-3"></span>
+              <span class="equalizer-bar eq-bar-4"></span>
+              <span class="equalizer-bar eq-bar-5"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cell 8: World Clock & Magnetic Cursor Target (Span 3) -->
+      <div class="bento-card span-3 reveal" id="clock-card" style="padding: 30px;">
+        <div class="clock-widget">
+          <div>
+            <span class="badge" style="margin-bottom: 12px; font-size: 0.65rem;">New York Time</span>
+            <div class="clock-face-container">
+              <div class="clock-display" id="live-clock">19:28:45</div>
+            </div>
+          </div>
+          
+          <div class="magnetic-track-box">
+            <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px;">Magnetic Ring</span>
+            <div class="magnetic-circle" id="magnetic-target">
+              <div class="magnetic-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
