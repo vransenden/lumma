@@ -442,6 +442,10 @@ a {
   color: var(--text-primary);
 }
 
+.mobile-cta-item {
+  display: none;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -1749,6 +1753,24 @@ a {
   
   .nav-actions {
     margin-right: 40px;
+  }
+  
+  .mobile-cta-item {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+  
+  .nav-mobile-cta {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 12px 24px !important;
+    display: flex !important;
+  }
+  
+  .nav-desktop-cta {
+    display: none !important;
   }
   
   /* 4. Hero Section Mobile CTA Formats */
