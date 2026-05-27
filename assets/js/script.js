@@ -327,7 +327,7 @@ function initProjectModal() {
       services: 'Brand Guidelines & Interactive Styleguides',
       year: '2025',
       frameworks: 'Brand Board / Web Typography / Custom SVGs',
-      desc: 'A complete crypto protocol branding system featuring sharp custom SVGs, futuristic typography, and glowing dark violet design sheets. This case study details the brand architecture, solar icon grids, and social assets shipped for active ThemeForest templates.'
+      desc: 'A complete crypto protocol branding system featuring sharp custom SVGs, futuristic typography, and glowing dark violet design sheets. This case study details the brand architecture, solar icon grids, and social assets shipped for active web3 protocols.'
     },
     solas: {
       title: 'Solas Premium Agency Site',
