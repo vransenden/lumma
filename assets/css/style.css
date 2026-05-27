@@ -1757,7 +1757,7 @@ a {
   }
   
   .nav-actions {
-    margin-right: 40px;
+    margin-right: 0 !important;
   }
   
   .mobile-cta-item {
