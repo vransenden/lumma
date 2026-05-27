@@ -71,17 +71,40 @@ function initCustomCursor() {
   });
 }
 
-/* --- SCROLLING HEADER BACKGROUND --- */
+/* --- SCROLLING HEADER BACKGROUND & SMART HIDE/SHOW --- */
 function initScrollHeader() {
   const header = document.getElementById('header');
+  const navLinks = document.getElementById('nav-links');
   if (!header) return;
 
+  let lastScrollTop = 0;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const currentScrollY = window.scrollY;
+
+    // Toggle background state class (.scrolled)
+    if (currentScrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
+
+    // Do NOT hide header if mobile navlinks drawer is actively open
+    const isMobileNavOpen = navLinks && navLinks.classList.contains('active');
+
+    if (!isMobileNavOpen) {
+      // Check scroll direction
+      if (currentScrollY > lastScrollTop && currentScrollY > 80) {
+        // Scrolling Down - Hide Header
+        header.classList.add('header-hidden');
+      } else if (currentScrollY < lastScrollTop) {
+        // Scrolling Up - Show Header
+        header.classList.remove('header-hidden');
+      }
+    }
+
+    // Update lastScrollTop (ensure it is not negative due to bounce)
+    lastScrollTop = Math.max(0, currentScrollY);
   });
 }
 
